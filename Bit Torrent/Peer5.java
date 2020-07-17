@@ -113,7 +113,7 @@ public class Peer5 {
 						out.flush();
 						boolean status = (boolean) in.readObject();
 						if (status) {
-							File file = new File("C:\\Users\\NIKHIL MALLADI\\Desktop\\CN1\\Peer5",
+							File file = new File("/Peer5",
 									Integer.toString(a[i]));
 							byte[] bytes = new byte[100000];
 
@@ -135,7 +135,7 @@ public class Peer5 {
 	}
 
 	public static void mergeFiles() throws IOException {
-		String directoryPath = "C:\\Users\\NIKHIL MALLADI\\Desktop\\CN1\\Peer5";		
+		String directoryPath = "/Peer5";		
 		byte[] chunk = new byte[100000]; // this buffer size could be
 											// anything
 		File[] files = new File(directoryPath).listFiles();
