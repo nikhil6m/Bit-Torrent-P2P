@@ -56,7 +56,7 @@ public class Peer1 {
 				int chunkName = (int) in.readObject();
 				System.out.print(chunkName+" ");
 				chunksList.remove(chunkName);				
-				File file = new File("C:\\Users\\NIKHIL MALLADI\\Desktop\\CN1\\Peer1", Integer.toString(chunkName));
+				File file = new File("/Peer1", Integer.toString(chunkName));
 				byte[] a = new byte[100000];
 				fos = new FileOutputStream(file);
 				bos = new BufferedOutputStream(fos);
@@ -114,7 +114,7 @@ public class Peer1 {
 						out.flush();
 						boolean status = (boolean) in.readObject();
 						if (status) {
-							File file = new File("C:\\Users\\NIKHIL MALLADI\\Desktop\\CN1\\Peer1",
+							File file = new File("/Peer1",
 									Integer.toString(a[i]));
 							byte[] bytes = new byte[100000];
 
@@ -169,7 +169,7 @@ class Handler1 extends Thread {
 
 	public Handler1(Socket connection) throws IOException {
 		this.connection = connection;
-		this.chunkLoc = "C:\\Users\\NIKHIL MALLADI\\Desktop\\CN1\\Peer1";
+		this.chunkLoc = "/Peer1";
 	}
 
 	public void run() {
