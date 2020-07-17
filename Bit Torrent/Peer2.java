@@ -114,7 +114,7 @@ public class Peer2 {
 						out.flush();
 						boolean status = (boolean) in.readObject();
 						if (status) {
-							File file = new File("C:\\Users\\NIKHIL MALLADI\\Desktop\\CN1\\Peer2",
+							File file = new File("/Peer2",
 									Integer.toString(a[i]));
 							byte[] bytes = new byte[100000];
 
@@ -169,7 +169,7 @@ class Handler2 extends Thread {
 
 	public Handler2(Socket connection) throws IOException {
 		this.connection = connection;
-		this.chunkLoc = "C:\\Users\\NIKHIL MALLADI\\Desktop\\CN1\\Peer2";
+		this.chunkLoc = "/Peer2";
 	}
 
 	public void run() {
