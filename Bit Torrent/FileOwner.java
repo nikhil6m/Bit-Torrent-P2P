@@ -32,14 +32,14 @@ public class FileOwner {
 		int numberOfClients = 5;
 		try {
 			
-			File fileName = new File("C:\\Users\\NIKHIL MALLADI\\Desktop\\CN1\\test1.pdf");
-			File outputFile = new File("C:\\Users\\NIKHIL MALLADI\\Desktop\\CN1\\chunks\\output.txt");
+			File fileName = new File("test1.pdf");
+			File outputFile = new File("chunks/output.txt");
 			
 			System.out.println("Splitting the given file into chunks");
 			
 			splitFile(fileName);
 			
-			String chunksLocation = "C:\\Users\\NIKHIL MALLADI\\Desktop\\CN1\\chunks";
+			String chunksLocation = "/chunks";
 			File[] files = new File(chunksLocation).listFiles();
 
 			int chunkCount = files.length;
@@ -81,7 +81,7 @@ public class FileOwner {
 					BufferedInputStream bis = new BufferedInputStream(fis)) {
 				int bytesAmount = 0;
 				while ((bytesAmount = bis.read(buffer)) > 0) {
-					newFile = new File("C:\\Users\\NIKHIL MALLADI\\Desktop\\CN1\\chunks", Integer.toString(counter++));
+					newFile = new File("/chunks", Integer.toString(counter++));
 					try (FileOutputStream out1 = new FileOutputStream(newFile)) {
 						out1.write(buffer, 0, bytesAmount);
 						out1.flush();
